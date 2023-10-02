@@ -33,4 +33,4 @@ class Solution:
                 if grid[r][c] == "1" and (r, c) not in visit:
                     bfs(r,c)
                     islands += 1
-            return islands
+        return islands
