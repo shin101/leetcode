@@ -1,7 +1,35 @@
 
-# Given a string s, return the longest 
-# palindromic bsubstringin s.
+# Given a string s, return the longest palindromi substring in s.
+
+# find a middle point and expand left and right from there
+# must account for odd and even numbered string 
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        pass
+        res = ""
+        resLen = 0
+
+        for i in range(len(s)):
+            # odd length
+            l, r = i, i
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                if (r - l + 1) < resLen:
+                    res = s[l:r+1]
+                    resLen = r-l + 1
+                l -= 1
+                r += 1
+
+            # even length
+            l, r = i, i + 1
+            while l >=0 and r < len(s) and s[l] == s[r]:
+                if (r- l + 1) > resLen:
+                    res = s[l:r+1]
+                    resLen = r-1+1
+                
+                l -= 1
+                r += 1
+        
+        return res
+
+sol = Solution()
+print(sol.longestPalindrome("cbbd"))
