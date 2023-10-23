@@ -1,6 +1,6 @@
 class Solution:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
-        output = []
+        output = [] 
         l = 0
         r = len(products)-1
         products.sort()
