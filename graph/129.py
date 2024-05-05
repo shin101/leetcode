@@ -11,7 +11,7 @@ class Solution:
         def dfs(node, curr):
             nonlocal res
 
-            if not node:
+            if not node:w
                 return
             
             curr += str(node.val)
